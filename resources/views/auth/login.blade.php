@@ -10,14 +10,16 @@
     
     <div class="wrapper">
       <div class="title"><span>Login Form</span></div>
-      <form action="#">
+      <form method="POST" action="{{route('login')}}">
+        @csrf
         <div class="row">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Email or Phone" required />
+          <label for="Name" :value="__('Name')"></label>
+          <input type="text" placeholder="Email or Phone" required :value="old('email')" />
         </div>
         <div class="row">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" required />
+          <input type="password" placeholder="Password" required :value="old('[password]')"/>
         </div>
         <div class="pass"><a href="#">Forgot password?</a></div>
         <div class="row button">

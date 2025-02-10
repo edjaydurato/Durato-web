@@ -9,18 +9,20 @@
 <body>
     <div class="wrapper">
         <h2>Registration</h2>
-        <form action="#">
+        <form method="POST" action="{{route('login')}}">
+          @csrf
           <div class="input-box">
-            <input type="text" placeholder="Enter your name" required>
+            <label for="Name" :value="__('Name')"></label>
+            <input type="text"  placeholder="Enter your name" required :value="old('name')">
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Enter your email" required>
+            <input type="text" placeholder="Enter your email" required :value="old('email')">
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Create password" required>
+            <input type="password" placeholder="Create password" required :value="old('password')">
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Confirm password" required>
+            <input type="password" placeholder="Confirm password" required :value="old('password')">
           </div>
           <div class="policy">
             <input type="checkbox">
